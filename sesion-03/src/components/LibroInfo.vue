@@ -1,12 +1,12 @@
 <script setup>
-    const titulo = "Titulo";
-    const autor = "Autor";
-    const anyo = 2024;
+    const titulo = "Programar con Vue";
+    const autor = "Autor Desconocido";
+    const anyo = 2021;
 </script>
 <template>
-    <p>{{titulo}}</p>
-    <p>{{ autor }}</p>
-    <p>{{ anyo }}</p>
+    <p>Titulo: {{titulo}}</p>
+    <p>Autor: {{ autor }}</p>
+    <p>Año: {{ anyo }}</p>
 </template>
 <style scoped>
 </style>
