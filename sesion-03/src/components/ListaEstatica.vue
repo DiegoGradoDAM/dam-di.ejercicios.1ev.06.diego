@@ -8,4 +8,7 @@
     </ul>
 </template>
 <style scoped>
+    ul{
+        background-color: blueviolet;
+    }
 </style>

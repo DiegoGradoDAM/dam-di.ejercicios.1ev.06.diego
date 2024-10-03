@@ -9,4 +9,7 @@
     <p>Año: {{ anyo }}</p>
 </template>
 <style scoped>
+    p{
+        border: 1px solid black;
+    }
 </style>
