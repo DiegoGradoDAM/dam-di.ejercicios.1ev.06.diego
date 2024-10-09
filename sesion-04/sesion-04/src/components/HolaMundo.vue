@@ -1,31 +1,33 @@
 <!-- HolaMundo.vue -->
 <template>
     <div>
-    <h1>{{ mensaje }}</h1>
-    <p>{{ mensajeAdicional }}</p>
-    <button @click="cambiarMensaje">Cambiar Mensaje</button>
+    <h1>{{ datos.mensaje }}</h1>
+    <p>Autor: {{ datos.autor }}</p>
+    <p>Fecha: {{ datos.dia }}/{{ datos.mes }}/{{ datos.anio }}</p>
+   
+    <button @click="cambiarDatos">Cambiar Datos</button>
     </div>
    </template>
    <script setup>
-   import { ref, computed, onMounted, onUnmounted } from 'vue';
-   // Usamos ref para crear una variable reactiva
-   const mensaje = ref("¡Hola, Mundo!");
-   // Función para cambiar el mensaje de manera reactiva
-   const cambiarMensaje = () => {
-    mensaje.value = "¡Mensaje cambiado!";
-   };
-   // Propiedad computada que depende de 'mensaje'
-   const mensajeAdicional = computed(() => {
-    return mensaje.value === "¡Hola, Mundo!"
-    ? "El mensaje es el original"
-    : "El mensaje ha cambiado";
+   import { reactive, onMounted } from 'vue';
+   // Usamos reactive para crear un objeto reactivo
+   const datos = reactive({
+    mensaje: "¡Hola, Mundo!",
+    autor: "Anónimo",
+    dia: 1,
+    mes: 1,
+    anio: 2023
    });
+   const cambiarDatos = () => {
+    datos.mensaje = "¡Mensaje cambiado!";
+    datos.autor = "Juan Pérez";
+    datos.dia = 15;
+    datos.mes = 12;
+    datos.anio = 2024;
+   };
    // Ciclo de vida: onMounted
    onMounted(() => {
     console.log("El componente HolaMundo ha sido montado");
    });
-   // Ciclo de vida: onUnmounted
-   onUnmounted(() => {
-    console.log("El componente HolaMundo ha sido desmontado");
-   });
    </script>
+   
