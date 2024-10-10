@@ -9,16 +9,16 @@
     </div>
 </template>
 <script setup>
-   import { reactive, onMounted, onUpdated, onBeforeMount,onUnmounted, onBeforeUpdate } from 'vue';
+   import { reactive, onMounted, onUpdated, onBeforeMount,onUnmounted, onBeforeUpdate, ref } from 'vue';
    // Usamos reactive para crear un objeto reactivo
-   let n = 0;
+   const n = ref(0);
    const datos = reactive({
     mensaje: "¡Hola, Mundo!",
     autor: "Anónimo",
     dia: 1,
     mes: 1,
     anio: 2023,
-    contador: n
+    contador: n.value
    });
    const cambiarDatos = () => {
     datos.mensaje = "¡Mensaje cambiado!";
@@ -26,7 +26,7 @@
     datos.dia = 15;
     datos.mes = 12;
     datos.anio = 2024;
-    datos.contador = n+1;
+    datos.contador = n.value+1;
    };
    //Funcion que se usara para que la hora cambie
    function actualizarHora(){
@@ -51,7 +51,7 @@
    });
    onUpdated(()=> {
     console.log("onUpdated -- "+actualizarHora());
-    n = n+1;
+    n.value = n.value+1;
    })
    onUnmounted(()=> {
     console.log("onUnMounted -- "+actualizarHora());
