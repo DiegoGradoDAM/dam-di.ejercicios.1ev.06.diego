@@ -26,7 +26,7 @@
     datos.dia = 15;
     datos.mes = 12;
     datos.anio = 2024;
-    datos.contador = n.value+1;
+    datos.contador = n.value;
    };
    //Funcion que se usara para que la hora cambie
    function actualizarHora(){
@@ -51,13 +51,13 @@
    });
    onUpdated(()=> {
     console.log("onUpdated -- "+actualizarHora());
-    n.value = n.value+1;
    })
    onUnmounted(()=> {
     console.log("onUnMounted -- "+actualizarHora());
    })
    onBeforeUpdate(()=> {
     console.log("onBeforeUpdate -- "+actualizarHora());
+    n.value = n.value+1;
    })
 </script>
    

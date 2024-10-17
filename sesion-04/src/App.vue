@@ -1,10 +1,10 @@
 <!-- App.vue -->
 <template>
   <div>
-  <HolaMundo />
+    <HolaMundo />
   </div>
  </template>
  <script setup>
- import HolaMundo from './components/HolaMundo.vue';
+  import HolaMundo from './components/HolaMundo.vue';
  </script>
  
